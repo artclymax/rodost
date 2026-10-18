@@ -1,0 +1,82 @@
+@use "../tools" as *;
+@use "components" as *;
+
+.home-cta-form {
+	position: relative;
+	z-index: 1;
+	padding-bottom: adapt(120, 56);
+
+	&__container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 32px adapt(94, 24, $tablet);
+		align-items: start;
+
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__content {
+	}
+
+	&__header {
+	}
+
+	&__title {
+	}
+
+	&__descr {
+	}
+
+	&__features {
+		@include reset-list;
+		@include flex-column;
+		gap: 24px;
+	}
+
+	&__feature {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+	}
+
+	&__feature-icon {
+		flex-shrink: 0;
+		@include square(64px);
+		--object-fit: contain;
+	}
+
+	&__feature-content {
+		@include flex-column;
+		gap: 10px;
+		&:not(:first-child) {
+			padding-left: 20px;
+			border-left: 1px solid rgba(#d89c70, 0.3);
+		}
+	}
+
+	&__feature-title {
+		@include title-4;
+	}
+
+	&__feature-descr {
+		color: var(--color-gray-2);
+	}
+
+	&__form-box {
+		@include card-box;
+		background: var(--color-white);
+		padding: adapt(32, 12, $tablet);
+		border-color: var(--color-accent-sec);
+	}
+
+	&__form {
+	}
+
+	&__image {
+		@include image-abs;
+		z-index: -1;
+		@include overlay(var(--color-light-3), 0.7);
+	}
+}

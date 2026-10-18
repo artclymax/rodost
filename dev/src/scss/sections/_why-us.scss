@@ -1,0 +1,134 @@
+@use "../tools" as *;
+
+.section-why-us {
+	padding-bottom: var(--section-padding);
+	&__container {
+	}
+	.section-header {
+		max-width: 720px;
+	}
+	&__wrapper {
+		display: grid;
+		gap: 24px;
+		grid-template-columns: 2fr 1.2fr;
+
+		@include media($tablet) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__features {
+	}
+
+	&__grid {
+		gap: 24px;
+		--min: 214px;
+	}
+
+	&__item {
+	}
+
+	&__experience {
+	}
+}
+
+.feature-card {
+	padding: adapt(16, 8, $tablet);
+	border: 1px solid var(--color-gray);
+	@include flex-column;
+	gap: 16px;
+
+	&__icon {
+		height: adapt(120, 96);
+		display: flex;
+		justify-content: center;
+		img {
+			width: auto;
+			height: 100%;
+		}
+	}
+
+	&__content {
+		@include flex-column;
+		gap: 16px;
+	}
+
+	&__title {
+		&:not(:last-child) {
+			padding-bottom: 16px;
+			position: relative;
+			&::after {
+				content: "";
+				width: 44px;
+				height: 1px;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				background-color: var(--color-accent-sec);
+			}
+		}
+	}
+
+	&__descr {
+		font-size: 14px;
+		color: var(--color-gray-2);
+	}
+}
+
+.swiper-slider {
+	&__pagination {
+	}
+}
+
+.features-swiper {
+	&__wrapper {
+	}
+
+	&__slide {
+	}
+}
+
+.experience-card {
+	position: relative;
+	z-index: 1;
+	background: var(--color-accent);
+	color: var(--color-light);
+	padding: adapt(20, 6, $tablet) adapt(40, 10, $tablet);
+	min-height: 420px;
+	&__image {
+		@include image-abs;
+		z-index: -1;
+	}
+
+	&__content {
+	}
+
+	&__number {
+		color: var(--color-accent-sec);
+		font-weight: 700;
+		font-size: adapt(140, 100);
+		line-height: 120%;
+	}
+
+	&__title {
+		color: inherit;
+		&:not(:last-child) {
+			padding-bottom: 20px;
+			margin-bottom: adapt(32, 24);
+			position: relative;
+			&::after {
+				content: "";
+				width: 93px;
+				height: 2px;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				background-color: var(--color-accent-sec);
+			}
+		}
+	}
+
+	&__descr {
+		max-width: 342px;
+	}
+}

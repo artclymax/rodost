@@ -1,0 +1,32 @@
+@use "../tools" as *;
+
+.block-about {
+	padding-top: var(--section-padding);
+
+	&__container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		align-items: center;
+		gap: 32px 24px;
+
+		@include media($tablet) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__image {
+		height: 100%;
+		min-height: adapt(446, 258);
+	}
+
+	&__content {
+		@include flex-column;
+		gap: adapt(32, 20);
+	}
+
+	&__title {
+	}
+
+	&__text {
+	}
+}

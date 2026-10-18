@@ -1,0 +1,52 @@
+@use "../tools" as *;
+
+.popular-products-grid {
+	&__container {
+	}
+
+	&__header {
+		display: grid;
+		grid-template-columns: 1fr 1.3fr auto;
+		gap: 24px 32px;
+		align-items: start;
+
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__title {
+	}
+
+	&__descr {
+	}
+
+	&__btn {
+	}
+
+	&__cards {
+		--min: 280px;
+		gap: 24px;
+
+		@include media( $mobile) {
+			--min: 160px;
+			gap: 16px 8px;	
+		};
+	}
+
+	&__card {
+	}
+}
+.popular-card {
+	&__link {
+	}
+
+	&__image {
+	}
+
+	&__title {
+	}
+
+	&__btn {
+	}
+}

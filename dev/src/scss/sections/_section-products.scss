@@ -1,0 +1,53 @@
+@use "../tools" as *;
+
+.section-products {
+	&__container {
+	}
+
+	&__header {
+	}
+
+	&__title {
+	}
+
+	&__descr {
+	}
+
+	&__cards {
+		--min: 240px;
+		gap: 24px;
+	}
+
+	&__card {
+		.catalog-card {
+			&__wrapper-link {
+			}
+
+			&__image {
+			}
+
+			&__content {
+				flex-direction: row;
+				gap: 12px;
+			}
+
+			&__title {
+			}
+
+			&__descr {
+				flex-shrink: 0;
+			}
+		}
+	}
+	&__no-found {
+		@include flex-column;
+		gap: 24px;
+		align-items: start;
+	}
+
+	&__no-found-title {
+	}
+
+	&__no-found-btn {
+	}
+}

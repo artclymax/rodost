@@ -1,0 +1,61 @@
+@use "../tools" as *;
+
+.services {
+	padding-top: var(--section-padding);
+	padding-bottom: unset;
+	&__container {
+	}
+
+	&__cards {
+		--min: #{adapt(384, 340)};
+		--gap: 24px;
+	}
+
+	&__card {
+	}
+}
+
+.services-card {
+	display: flex;
+
+	&__wrapper-link {
+		text-decoration: none;
+		color: inherit;
+
+		flex-grow: 1;
+		@include flex-column;
+		gap: 16px;
+
+		background: var(--color-white);
+		border: 1px solid var(--color-gray);
+		padding: adapt(20, 12);
+		transition: all 0.3s;
+
+		@include hover {
+			border-color: var(--color-accent-sec-hv);
+			.services-card__descr::after {
+				transform: translateX(4px);
+			}
+		}
+	}
+
+	&__icon {
+		@include square(120px);
+		display: flex;
+		flex-shrink: 0;
+	}
+
+	&__title {
+		flex-grow: 1;
+	}
+
+	&__descr {
+		--width: 32px;
+		gap: 12px;
+		justify-content: space-between;
+
+		&::after {
+			transition: all 0.3s;
+		}
+	}
+}

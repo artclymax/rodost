@@ -1,0 +1,126 @@
+@use "../tools" as *;
+
+.category-details {
+	position: relative;
+	z-index: 1;
+	&__container {
+	}
+
+	&__columns {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: adapt(28, 24, $tablet);
+		@include media($tablet) {
+			grid-template-columns: 1fr 1fr;
+		}
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__column {
+		@include flex-column;
+		gap: adapt(24, 12);
+		&:not(:last-child) {
+			@include media($tablet, min) {
+				padding-right: adapt(28, 24, $tablet);
+				border-right: 1px solid rgba(#d89c70, 0.3);
+			}
+			@include media($tablet) {
+				padding-bottom: adapt(28, 24, $tablet);
+				border-bottom: 1px solid rgba(#d89c70, 0.3);
+			}
+		}
+		&:last-child {
+			@include media($tablet) {
+				grid-column: 1 / -1;
+			}
+		}
+	}
+
+	&__title {
+	}
+
+	&__tasks {
+		@include reset-list;
+		@include flex-column;
+		gap: 20px;
+	}
+
+	&__task {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+
+		&::before {
+			flex-shrink: 0;
+			content: "";
+			@include square(24px);
+			@include bgimg(url("../../../public/icons/task-icon.svg"), 20px);
+			background-color: var(--color-accent-sec);
+			border-radius: 50%;
+		}
+	}
+
+	&__descr {
+	}
+
+	&__custom-list {
+		@include reset-list;
+		@include flex-column;
+		gap: 12px;
+	}
+
+	&__custom-item {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+	}
+
+	&__custom-icon {
+		flex-shrink: 0;
+		width: 80px;
+		height: 60px;
+		--object-fit: contain;
+	}
+
+	&__custom-title {
+		@include title-4;
+	}
+
+	&__materials {
+		@include reset-list;
+		@include flex-column;
+		gap: 12px;
+	}
+
+	&__material {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+	}
+
+	&__material-image {
+		flex-shrink: 0;
+		width: 80px;
+		height: 40px;
+	}
+
+	&__material-content {
+		@include flex-column;
+		gap: 4px;
+	}
+
+	&__material-title {
+		@include title-4;
+	}
+
+	&__material-descr {
+	}
+
+	&__image {
+		@include image-abs;
+		z-index: -1;
+		--object-pos: bottom;
+	}
+}

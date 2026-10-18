@@ -1,0 +1,38 @@
+@use "../tools" as *;
+
+.about-customers {
+	padding-bottom: var(--section-padding);
+	&__container {
+	}
+
+	&__list {
+		--min: 280px;
+		gap: 20px 24px;
+	}
+
+	&__item {
+	}
+}
+
+.customer-card {
+	border: 1px solid var(--color-gray);
+	padding: 10px;
+	display: flex;
+	gap: 12px;
+
+	&__icon {
+		flex-shrink: 0;
+		@include square(64px);
+	}
+
+	&__content {
+		@include flex-column;
+		gap: 12px;
+	}
+
+	&__title {
+	}
+
+	&__descr {
+	}
+}

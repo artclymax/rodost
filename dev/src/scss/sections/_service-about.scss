@@ -1,0 +1,37 @@
+@use "../tools" as *;
+
+.service-about {
+	@include media($mobile) {
+		padding-bottom: 32px;
+	}
+
+	&__container {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		align-items: center;
+		gap: 24px;
+
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__image {
+		height: adapt(446, 256, $finishBreakpoint, $mobile);
+	}
+
+	&__content {
+		@include flex-column;
+		gap: adapt(32, 20);
+	}
+
+	&__title {
+	}
+
+	&__descr {
+	}
+
+	&__btn {
+		align-self: flex-start;
+	}
+}

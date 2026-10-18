@@ -1,0 +1,143 @@
+@use "../tools" as *;
+
+.projects {
+	&__container {
+	}
+
+	&__filter {
+	}
+
+	&__grid {
+		gap: 24px;
+	}
+
+	&__card {
+	}
+
+	&__pagination {
+	}
+}
+.projects-filter {
+	&__list {
+		display: flex;
+		align-items: flex-end;
+		flex-wrap: wrap;
+		@include media($mobile) {
+			align-items: start;
+			flex-wrap: nowrap;
+		}
+	}
+	&__tab {
+		@include reset-link;
+		padding: 12px adapt(56, 20);
+		@include liquid-glass;
+		border: 1px solid var(--color-gray);
+		background: rgba(255, 255, 255, 0.1);
+		box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+		font-weight: 600;
+		transition: all 0.3s;
+
+		@include media($mobile) {
+			width: 100%;
+			text-align: center;
+			justify-content: center;
+		}
+
+		@include hover {
+			background: var(--color-accent);
+			border-color: var(--color-accent);
+			color: var(--color-light);
+		}
+		&.is-active {
+			background: var(--color-accent);
+			border-color: var(--color-accent);
+			padding-block: 16px;
+			color: var(--color-light);
+		}
+	}
+}
+.projects-card {
+	&__link {
+		display: flex;
+
+		@include hover {
+			.projects-card__image {
+				img {
+					transform: scale(1.1);
+				}
+			}
+		}
+	}
+
+	&__image {
+		height: 280px;
+		width: 100%;
+		overflow: hidden;
+
+		img {
+			transition: all 0.3s;
+		}
+	}
+}
+.pagination--prev {
+}
+.pagination--next {
+}
+.projects-empty {
+	justify-items: start;
+	gap: 24px;
+	&__descr {
+	}
+
+	&__btn {
+	}
+}
+
+.projects-filter__toggle {
+	display: none;
+}
+
+@include media($mobile) {
+	.projects-filter {
+		position: relative;
+	}
+
+	.projects-filter__toggle {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+		width: 100%;
+
+		&::after {
+			content: "";
+			flex-shrink: 0;
+			@include square(20px);
+			border-radius: 50%;
+			background-color: var(--color-white);
+			@include bgimg(url("../../../public/icons/select-icon.svg"));
+			transition: all 0.3s;
+
+			.is-open & {
+				transform: rotate(180deg);
+			}
+		}
+	}
+
+	.projects-filter__list {
+		display: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		z-index: 10;
+		flex-direction: column;
+		background: var(--color-white);
+		max-height: 200px;
+		overflow-y: auto;
+	}
+
+	.projects-filter.is-open .projects-filter__list {
+		display: flex;
+	}
+}

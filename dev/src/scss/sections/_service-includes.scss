@@ -1,0 +1,104 @@
+@use "../tools" as *;
+
+.service-includes {
+	position: relative;
+
+	&__container {
+	}
+
+	&__title {
+	}
+
+	&__list {
+		@include reset-list;
+
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 12px 24px;
+
+		@include media($tablet) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__item {
+	}
+
+	&__bg {
+		@include abs-cover;
+		z-index: -1;
+	}
+}
+
+.service-includes-item {
+	@include flex-column;
+	position: relative;
+
+	&:not(:last-child) {
+		@include media($mobile, min) {
+			padding-right: 24px;
+
+			&::after {
+				content: "";
+				position: absolute;
+				top: 0;
+				right: 0;
+				transform: translateX(50%);
+				width: 1px;
+				height: 100%;
+				background-color: var(--color-accent-sec);
+			}
+		}
+		@include media($mobile) {
+			padding-bottom: 12px;
+			&::after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				//transform: translateX(50%);
+				width: 100%;
+				height: 1px;
+				background-color: var(--color-accent-sec);
+			}
+		}
+	}
+
+	@include media($tablet) {
+		&:nth-child(2n + 2) {
+			&::after {
+				display: none;
+			}
+		}
+	}
+	@include media($mobile) {
+		&:not(:last-child) {
+			&::after {
+				display: block;
+			}
+		}
+	}
+
+	&__icon {
+		@include square(86px);
+		display: flex;
+		flex-shrink: 0;
+
+		&:not(:last-child) {
+			margin-bottom: 24px;
+		}
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+
+	&__descr {
+	}
+}

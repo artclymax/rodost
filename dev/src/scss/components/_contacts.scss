@@ -1,0 +1,40 @@
+@use "../tools" as *;
+
+.contacts-list {
+	@include reset-list;
+	@include flex-column;
+	gap: 8px;
+	font-weight: 600;
+	&__item {
+	}
+
+	&__link {
+	}
+}
+
+.contacts-list--phones {
+}
+
+.contacts-list--email {
+}
+
+.socials {
+	@include reset-list;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+
+	&__item {
+	}
+
+	&__link {
+		@include square(24px);
+	}
+}
+
+.contacts-descr {
+}
+
+.contacts-address {
+	font-style: normal;
+}

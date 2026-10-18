@@ -1,0 +1,102 @@
+@use "../tools" as *;
+
+.custom-order {
+	position: relative;
+	padding-top: adapt(96, 56);
+	padding-bottom: adapt(96, 56);
+	min-height: 590px;
+
+	@include media($tablet) {
+		min-height: unset;
+		padding-bottom: 290px;
+	}
+
+	&__container {
+	}
+
+	&__body {
+		max-width: 474px;
+
+		@include media($tablet) {
+			max-width: 100%;
+		}
+	}
+
+	&__title {
+		max-width: 409px;
+		text-wrap: balance;
+
+		@include media($tablet) {
+			max-width: 100%;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__descr {
+		&:not(:last-child) {
+			margin-bottom: 32px;
+		}
+	}
+
+	&__btn {
+		&:not(:last-child) {
+			margin-bottom: adapt(52, 32);
+		}
+	}
+
+	&__feature {
+	}
+
+	&__bg-box {
+		@include abs-cover;
+		z-index: -1;
+	}
+
+	&__bg-big {
+	}
+
+	&__bg-small {
+		--object-pos: center 66%;
+	}
+}
+
+.custom-order-feature {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+
+	max-width: 320px;
+
+	@include media($tablet) {
+		max-width: 100%;
+	}
+
+	&__icon {
+		@include square(64px);
+		display: flex;
+		flex-shrink: 0;
+	}
+
+	&__descr {
+		text-wrap: balance;
+		padding-left: 12px;
+		font-size: 14px;
+		color: var(--color-gray-2);
+		position: relative;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left: 0;
+			width: 1px;
+			height: 100%;
+			min-height: 50px;
+			background: var(--color-accent-sec);
+		}
+	}
+}

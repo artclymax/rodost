@@ -1,0 +1,35 @@
+@use "functions" as *;
+@use "mixins" as *;
+@use "constants" as *;
+
+@mixin title-1 {
+	@include reset;
+	font-weight: 700;
+	font-size: adapt(52, 36);
+	line-height: 120%;
+	color: var(--color-dark-2);
+}
+
+@mixin title-2 {
+	@include reset;
+	font-weight: 700;
+	font-size: adapt(36, 26);
+	line-height: 120%;
+	color: var(--color-dark-2);
+}
+
+@mixin title-3 {
+	@include reset;
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 120%;
+}
+
+@mixin title-4 {
+	@include reset;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 120%;
+}
+
+// ===========================

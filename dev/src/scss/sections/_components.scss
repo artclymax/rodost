@@ -1,0 +1,26 @@
+@use "../tools" as *;
+
+.section-gap {
+	display: grid;
+	align-items: start;
+	gap: adapt(64, 32, $tablet);
+}
+
+.hidden-mobile-sm {
+	@include media($mobile-sm) {
+		display: none !important;
+	}
+}
+.visible-mobile-sm {
+	@include media($mobile-sm, min) {
+		display: none !important;
+	}
+}
+
+@mixin card-box {
+	border: 1px solid var(--color-gray);
+	padding: adapt(20, 10, $tablet);
+}
+.card-box {
+	@include card-box;
+}

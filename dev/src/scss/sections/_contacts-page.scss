@@ -1,0 +1,145 @@
+@use "../tools" as *;
+@use "components" as *;
+
+.contacts-page {
+	padding-bottom: 64px;
+	&__container {
+		display: grid;
+		grid-template-columns: 1fr 1.5fr;
+		gap: 24px;
+
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__card {
+		background: var(--color-white);
+	}
+
+	&__map {
+		min-height: adapt(479, 224);
+		iframe {
+			width: 100%;
+			height: 100%;
+			border: none;
+		}
+	}
+}
+
+.contacts-page-card {
+	@include card-box;
+	border-color: var(--color-accent-sec);
+	@include flex-column;
+	gap: 24px;
+	padding: adapt(32, 12, $tablet);
+	&__title {
+	}
+
+	&__list {
+		@include flex-column;
+		gap: 20px;
+	}
+
+	&__block {
+		align-items: start;
+		gap: 8px;
+		--width: 24px;
+	}
+
+	&__block-box {
+		@include flex-column;
+		gap: 8px;
+
+		.descr {
+			font-weight: 600;
+		}
+	}
+
+	&__label {
+	}
+
+	&__info {
+		font-size: 14px;
+		color: var(--color-gray-2);
+	}
+}
+
+.contacts-requisites {
+	padding-top: unset;
+	&__container {
+	}
+	&__wrapper {
+		background-position: center bottom;
+		background-size: cover;
+		background-repeat: no-repeat;
+		padding: adapt(32, 12, $tablet);
+
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		gap: 24px;
+
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__head {
+		--width: 96px;
+		--bg-size: 75px;
+		--bg-color: #{rgba(#d89c70, 0.16)};
+		gap: 24px;
+
+		&::before {
+			border-radius: 50%;
+		}
+	}
+
+	&__head-text {
+		@include flex-column;
+		gap: 16px;
+	}
+
+	&__title {
+		text-transform: uppercase;
+	}
+
+	&__company {
+		font-weight: 600;
+	}
+
+	&__grid {
+		@include media($tablet, min) {
+			display: flex;
+			align-items: start;
+			flex-wrap: wrap;
+			gap: adapt(42, 16, $tablet);
+		}
+		@include media($tablet) {
+			display: grid;
+			gap: 16px;
+		}
+	}
+
+	&__item {
+		@include media($tablet, min) {
+			@include flex-column;
+			gap: 16px;
+			max-width: 270px;
+		}
+
+		@include media($tablet) {
+			display: grid;
+			grid-template-columns: 1fr 2fr;
+			gap: 8px;
+		}
+	}
+
+	&__label {
+		font-size: 14px;
+		color: var(--color-gray-2);
+	}
+
+	&__value {
+	}
+}

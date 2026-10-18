@@ -1,0 +1,34 @@
+@use "../tools" as *;
+
+.project-slider {
+	padding-block: var(--section-padding);
+	&__container {
+	}
+
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 24px;
+	}
+
+	&__title {
+	}
+
+	&__btn {
+	}
+}
+
+.project-slider-swiper {
+	&__wrapper {
+	}
+
+	&__slide {
+	}
+}
+
+.project-slider-card {
+	&__image {
+		height: adapt(280, 234);
+	}
+}

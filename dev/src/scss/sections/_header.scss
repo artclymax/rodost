@@ -1,0 +1,87 @@
+@use "../tools" as *;
+.header {
+	background: var(--color-light);
+	padding-block: 24px;
+	z-index: 55;
+
+	@include media($tablet) {
+		padding-block: 14px;
+	}
+	&__container {
+		display: flex;
+		align-items: center;
+		gap: adapt(44, 24, $tablet);
+		justify-content: space-between;
+	}
+
+	&__logo-box {
+		flex-shrink: 0;
+		display: flex;
+		align-items: center;
+		gap: 12px;
+	}
+
+	&__logo {
+		padding-right: 12px;
+		border-right: 1px solid var(--color-gray);
+	}
+
+	&__logo-descr {
+		font-size: adapt(12, 9);
+		max-width: adapt(135, 100);
+		color: var(--color-gray-3);
+	}
+
+	&__menu {
+	}
+
+	&__btn {
+	}
+
+	&__burger-btn {
+	}
+}
+.header-menu {
+	display: flex;
+	gap: adapt(44, 24, $tablet);
+	align-items: center;
+	width: 100%;
+	justify-content: space-between;
+
+	&__main-menu {
+		@include media($tablet) {
+			width: 100%;
+		}
+	}
+
+	&__btn {
+	}
+
+	&__btn-box {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		flex-shrink: 0;
+		@include media($mobile) {
+			width: 100%;
+			flex-direction: column;
+			align-items: start;
+		}
+	}
+	&__phone {
+		font-weight: 600;
+
+		@include media($tablet) {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			font-size: 26px;
+			&::before {
+				content: "";
+				flex-shrink: 0;
+				@include square(24px);
+				@include bgimg(url("../../../public/images/icons/phone.svg"));
+			}
+		}
+	}
+}

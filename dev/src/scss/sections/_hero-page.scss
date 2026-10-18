@@ -1,0 +1,55 @@
+@use "../tools" as *;
+
+.hero-page {
+	position: relative;
+	z-index: 1;
+
+	&__container {
+		padding-top: 20px;
+		padding-bottom: 70px;
+		min-height: 260px;
+		@include media($mobile) {
+			padding-bottom: 230px;
+			min-height: 420px;
+			background: linear-gradient(
+				180deg,
+				#fdf9f6 20.08%,
+				#fdf9f6 47.41%,
+				#fdf9f6 62.17%,
+				rgba(253, 249, 246, 0) 72.12%
+			);
+		}
+		@include flex-column;
+		gap: adapt(45, 24);
+	}
+
+	&__content {
+		@include flex-column;
+		gap: 20px;
+	}
+
+	&__breadcrumbs {
+	}
+
+	&__title {
+	}
+
+	&__descr {
+		max-width: 590px;
+	}
+
+	&__image {
+		@include image-abs;
+		z-index: -1;
+		--object-pos: bottom;
+	}
+}
+
+.hero-page-index {
+	.hero-page__container {
+		min-height: auto;
+		@include media($mobile) {
+			min-height: auto;
+		}
+	}
+}

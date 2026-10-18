@@ -1,0 +1,247 @@
+@use "../tools" as *;
+
+.hero {
+	position: relative;
+	z-index: 1;
+	background: var(--color-light);
+	&__slider {
+	}
+
+	&__slide {
+	}
+
+	&__footer {
+		position: absolute;
+		bottom: adapt(44, 0, $mobile);
+		left: 0;
+		width: 100%;
+		z-index: 5;
+	}
+
+	&__footer-container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__tab {
+	}
+
+	&__controls {
+		display: flex;
+		align-items: center;
+		gap: 45px;
+	}
+
+	&__pagination {
+		display: flex;
+		align-items: center;
+		gap: 6px;
+		font-weight: 600;
+		color: var(--color-white);
+	}
+
+	&__pagination-current {
+		font-size: 18px;
+	}
+
+	&__pagination-divider {
+		opacity: 0.3;
+	}
+
+	&__pagination-total {
+		opacity: 0.3;
+	}
+
+	&__navs {
+		display: flex;
+	}
+
+	&__navs-btn {
+		border: 1px solid var(--color-gray);
+		padding: 16px 24px;
+		background: rgba(255, 255, 255, 0.2);
+		backdrop-filter: blur(10px);
+		border-radius: 0;
+		padding: 12px 28px;
+		color: var(--color-gray);
+		width: auto;
+		&::after {
+			display: none;
+		}
+		svg {
+			display: flex;
+			@include square(20px);
+			flex-shrink: 0;
+		}
+		@include hover {
+			background: var(--color-accent);
+			border-color: var(--color-accent);
+			color: var(--color-light);
+		}
+	}
+	&__navs-btn-prev {
+	}
+	&__navs-btn-next {
+		background: var(--color-light-3);
+		color: var(--color-accent);
+	}
+}
+
+.hero-swiper {
+	&__wrapper {
+	}
+}
+
+.hero-slide {
+	&__wrapper {
+		position: relative;
+		z-index: 1;
+	}
+
+	&__image {
+		@include image-abs;
+		z-index: -1;
+		--object-pos: bottom;
+		.big-image & {
+			@include media($tablet) {
+				--object-pos: 80% bottom;
+			}
+		}
+	}
+
+	&__container {
+		padding-top: adapt(84, 24);
+		padding-bottom: 217px;
+		position: relative;
+		z-index: 2;
+		.big-image & {
+			@include media($tablet) {
+				background: linear-gradient(
+					200deg,
+					#fdf9f6 -7.08%,
+					#fdf9f6 41.19%,
+					rgba(253, 249, 246, 0.6) 67.79%,
+					rgba(253, 249, 246, 0) 100%
+				);
+			}
+		}
+		@include media($tablet) {
+			padding-bottom: 340px;
+		}
+	}
+
+	&__content {
+		@include media($tablet, min) {
+			max-width: 650px;
+		}
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__descr {
+		&:not(:last-child) {
+			margin-bottom: 32px;
+		}
+	}
+
+	&__btns {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		flex-wrap: wrap;
+
+		&:not(:last-child) {
+			margin-bottom: adapt(80, 22);
+		}
+	}
+
+	&__btn {
+	}
+
+	&__btn--primary {
+	}
+
+	&__btn--secondary {
+	}
+
+	&__advantages {
+		@include reset-list;
+		display: flex;
+		align-items: center;
+		gap: 40px adapt(40, 18, $mobile);
+		flex-wrap: wrap;
+	}
+
+	&__advantage {
+		display: flex;
+		align-items: center;
+		gap: 0 12px;
+		font-size: adapt(46, 32);
+		&:not(:last-child) {
+			padding-right: adapt(40, 20, $mobile);
+			border-right: 1px solid var(--color-gray);
+		}
+		@include media($mobile) {
+			flex-direction: column;
+			align-items: start;
+		}
+	}
+
+	&__advantage-value {
+		font-weight: 700;
+		font-size: adapt(46, 32);
+		line-height: 120%;
+		color: var(--color-accent-sec);
+		flex-shrink: 0;
+	}
+
+	&__advantage-label {
+		@include title-3;
+		@include media($mobile) {
+			font-size: 16px;
+		}
+	}
+}
+.hero-tabs {
+	&__wrapper {
+		align-items: flex-end;
+	}
+}
+.hero-tabs-slide {
+	width: auto !important;
+	&__wrapper {
+	}
+	&__btn {
+		padding: 12px adapt(56, 20);
+		border: 1px solid var(--color-gray);
+		backdrop-filter: blur(10px);
+		background: rgba(255, 255, 255, 0.2);
+		font-weight: 600;
+
+		transition: all 0.3s;
+
+		@include hover {
+			background: var(--color-accent);
+			border-color: var(--color-accent);
+			color: var(--color-light);
+		}
+		&.is-active {
+			background: var(--color-accent);
+			border-color: var(--color-accent);
+			padding-block: 16px;
+			color: var(--color-light);
+		}
+	}
+}
+.swiper-btn {
+	&__prev {
+	}
+
+	&__next {
+	}
+}

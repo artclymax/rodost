@@ -1,0 +1,66 @@
+@use "../tools" as *;
+
+.popular-products {
+	padding-bottom: var(--section-padding);
+	&__container {
+	}
+
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 24px;
+	}
+
+	&__title {
+	}
+
+	&__navs {
+		flex-shrink: 0;
+	}
+}
+.popular-products-swiper {
+	&__wrapper {
+	}
+
+	&__slide {
+	}
+
+	&__pagination {
+	}
+}
+.popular-card {
+	&__link {
+		@include reset-link;
+		@include flex-column;
+		gap: 16px;
+		height: 100%;
+		transition: all 0.3s;
+
+		@include hover {
+			border-color: var(--color-accent-sec);
+			.popular-card__image {
+				img {
+					transform: scale(1.1);
+				}
+			}
+		}
+	}
+
+	&__image {
+		height: adapt(240, 146);
+		overflow: hidden;
+		img {
+			transition: transform 0.3s;
+		}
+	}
+
+	&__title {
+		font-size: adapt(20, 18);
+	}
+
+	&__btn {
+		margin-top: auto;
+		padding-inline: 12px;
+	}
+}
